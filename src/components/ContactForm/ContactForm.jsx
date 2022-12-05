@@ -3,16 +3,15 @@ import * as yup from 'yup';
 import PropTypes from 'prop-types';
 import {
   FormWrapper,
+  InputLabel,
   Input,
   ErrorMsg,
   SubmitButton,
 } from './ContactForm.styled';
 
 const initialValues = {
-  name: 'Rosie Simpson',
-  number: '459-12-56',
-  // name: '',
-  // number: '',
+  name: '',
+  number: '',
 };
 
 const phoneRegExp =
@@ -45,16 +44,16 @@ export const ContactForm = ({ handleSubmit }) => (
     validationSchema={schema}
   >
     <FormWrapper>
-      <label htmlFor="name">
+      <InputLabel htmlFor="name">
         Name
         <Input type="text" name="name" />
         <ErrorMsg name="name" />
-      </label>
-      <label htmlFor="number">
+      </InputLabel>
+      <InputLabel htmlFor="number">
         Number
         <Input type="tel" name="number" />
         <ErrorMsg name="number" />
-      </label>
+      </InputLabel>
       <SubmitButton type="submit">Add contact</SubmitButton>
     </FormWrapper>
   </Formik>
