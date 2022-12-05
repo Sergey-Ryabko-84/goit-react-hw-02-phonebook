@@ -1,7 +1,12 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik } from 'formik';
 import * as yup from 'yup';
 import PropTypes from 'prop-types';
-// import { FormWrapper, Input, ErrorMsg } from "./ContactForm.styled";
+import {
+  FormWrapper,
+  Input,
+  ErrorMsg,
+  SubmitButton,
+} from './ContactForm.styled';
 
 const initialValues = {
   name: 'Rosie Simpson',
@@ -33,31 +38,25 @@ const schema = yup.object().shape({
 });
 
 
-export const ContactForm = ({handleSubmit}) => (
+export const ContactForm = ({ handleSubmit }) => (
   <Formik
     initialValues={initialValues}
     onSubmit={handleSubmit}
     validationSchema={schema}
   >
-    <Form>
+    <FormWrapper>
       <label htmlFor="name">
         Name
-        <Field
-          type="text"
-          name="name"
-        />
-        <ErrorMessage name="name" />
+        <Input type="text" name="name" />
+        <ErrorMsg name="name" />
       </label>
       <label htmlFor="number">
         Number
-        <Field
-          type="tel"
-          name="number"
-        />
-        <ErrorMessage name="number" />
+        <Input type="tel" name="number" />
+        <ErrorMsg name="number" />
       </label>
-      <button type="submit">Add contact</button>
-    </Form>
+      <SubmitButton type="submit">Add contact</SubmitButton>
+    </FormWrapper>
   </Formik>
 );
 

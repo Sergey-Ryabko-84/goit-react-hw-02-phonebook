@@ -11,7 +11,7 @@ export class App extends Component {
     filter: '',
   };
 
-  handleSubmit = (values, { resetForm }) => {
+  onSubmit = (values, { resetForm }) => {
     if (
       this.state.contacts.some(
         contact =>
@@ -33,14 +33,14 @@ export class App extends Component {
     resetForm();
   };
 
-  deleteHandler = e => {
+  onDelete = e => {
     const { id } = e.currentTarget;
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(contact => contact.id !== id),
     }));
   };
 
-  handleFilter = e => this.setState({ filter: e.currentTarget.value.trim() });
+  Filter = e => this.setState({ filter: e.currentTarget.value.trim() });
 
   contactFiltering = () => {
     return this.state.contacts
@@ -55,14 +55,14 @@ export class App extends Component {
       <div>
         <GlobalStyle />
         <h1>Phonebook</h1>
-        <ContactForm handleSubmit={this.handleSubmit} />
+        <ContactForm handleSubmit={this.onSubmit} />
 
         <h2>Contacts</h2>
-        <Filter handleFilter={this.handleFilter} />
+        <Filter handleFilter={this.Filter} />
         <ContactList
           contactList={this.contactFiltering()}
           value={this.state.filter}
-          deleteHandler={this.deleteHandler}
+          deleteHandler={this.onDelete}
         />
       </div>
     );
