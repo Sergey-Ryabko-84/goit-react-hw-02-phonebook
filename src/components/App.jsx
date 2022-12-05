@@ -33,14 +33,14 @@ export class App extends Component {
     resetForm();
   };
 
-  onDelete = e => {
+  deleteContact = e => {
     const { id } = e.currentTarget;
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(contact => contact.id !== id),
     }));
   };
 
-  Filter = e => this.setState({ filter: e.currentTarget.value.trim() });
+  filterHandler = e => this.setState({ filter: e.currentTarget.value.trim() });
 
   contactFiltering = () => {
     return this.state.contacts
@@ -58,11 +58,11 @@ export class App extends Component {
         <ContactForm handleSubmit={this.onSubmit} />
 
         <h2>Contacts</h2>
-        <Filter handleFilter={this.Filter} />
+        <Filter handleFilter={this.filterHandler} />
         <ContactList
           contactList={this.contactFiltering()}
           value={this.state.filter}
-          deleteHandler={this.onDelete}
+          deleteHandler={this.deleteContact}
         />
       </div>
     );
