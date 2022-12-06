@@ -10,7 +10,7 @@ export const FormWrapper = styled(Form)`
   min-height: 300px;
   background-color: #2b405520;
   border-radius: 4px;
-  border: 1px solid #999;
+  border: 1px solid #a0a0a0;
 `;
 
 export const InputLabel = styled.label`
@@ -22,7 +22,15 @@ export const InputLabel = styled.label`
 
 export const Input = styled(Field)`
   width: 240px;
+  height: 28px;
   margin: 8px 0;
+  border-radius: 4px;
+  border: 1px solid #a0a0a050;
+  outline: none;
+
+  :focus {
+    border: 2px solid #2b407580;
+  }
 `;
 
 export const ErrorMsg = styled(ErrorMessage)`
@@ -30,6 +38,7 @@ export const ErrorMsg = styled(ErrorMessage)`
 `;
 
 export const SubmitButton = styled.button`
+  margin: auto;
   width: 120px;
   height: 30px;
   color: #fff;
