@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const AppWrapper = styled.div`
-  padding: 40px;
+  padding: 0 40px;
 
   h1,
   h2 {
