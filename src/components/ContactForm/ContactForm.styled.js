@@ -39,7 +39,7 @@ export const ErrorMsg = styled(ErrorMessage)`
 
 export const SubmitButton = styled.button`
   margin: auto;
-  width: 120px;
+  padding: 0 12px;
   height: 30px;
   color: #fff;
   background-color: #2b4055d0;

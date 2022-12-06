@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import { Contact } from './Contact';
+import { List } from './ContactList.styled';
 
 export const ContactList = ({ contactList, deleteHandler }) => (
-  <ul>
+  <List>
     {contactList.map(contact => (
       <Contact
         key={contact.id}
@@ -10,7 +11,7 @@ export const ContactList = ({ contactList, deleteHandler }) => (
         deleteHandler={deleteHandler}
       />
     ))}
-  </ul>
+  </List>
 );
 
 ContactList.propTypes = {
