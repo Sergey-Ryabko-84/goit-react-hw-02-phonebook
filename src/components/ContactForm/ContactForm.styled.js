@@ -10,7 +10,7 @@ export const FormWrapper = styled(Form)`
   min-height: 300px;
   background-color: #2b405520;
   border-radius: 4px;
-  border: 1px solid #a0a0a0;
+  box-shadow: rgba(99, 99, 99, 0.7) 0px 2px 5px 0px;
 `;
 
 export const InputLabel = styled.label`

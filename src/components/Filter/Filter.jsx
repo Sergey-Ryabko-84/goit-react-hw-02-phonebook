@@ -1,12 +1,18 @@
 import PropTypes from 'prop-types';
+import { FilterWrapper, FilterInput, FilterLabel } from './Filter.styled';
 
 export const Filter = ({ handleFilter, value }) => (
-  <>
-    <label htmlFor="filter">
+  <FilterWrapper>
+    <FilterLabel htmlFor="filter">
       Find contacts by name
-      <input type="text" name="filter" onChange={handleFilter} value={value} />
-    </label>
-  </>
+      <FilterInput
+        type="text"
+        name="filter"
+        onChange={handleFilter}
+        value={value}
+      />
+    </FilterLabel>
+  </FilterWrapper>
 );
 
 Filter.propTypes = {
